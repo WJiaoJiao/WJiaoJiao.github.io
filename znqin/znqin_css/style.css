@@ -23,7 +23,7 @@ img{display: block;}
 
 .part2{background:url(../znqin_img/part2.jpg) center no-repeat;width:100%; height:435px; display:block;}
 
-.part3{width: 100%;display:inline-block;background: -webkit-radial-gradient(#638089, #4f7581, #284e5a);background: -o-radial-gradient(#638089, #4f7581, #284e5a);background: -moz-radial-gradient(#638089, #4f7581, #284e5a);background: radial-gradient(#638089, #4f7581, #284e5a);}
+.part3{width: 100%;display:inline-block;background:red;background: -webkit-radial-gradient(#638089, #4f7581, #284e5a);background: -o-radial-gradient(#638089, #4f7581, #284e5a);background: -moz-radial-gradient(#638089, #4f7581, #284e5a);background: radial-gradient(#638089, #4f7581, #284e5a);}
 .part3_wrap{width: 1082px;margin: auto;}
 .part3_each{position: relative;}
 .part3_each_01{background:url(../znqin_img/part3_01.jpg) center no-repeat;width:531px; height:393px; display:block;}
