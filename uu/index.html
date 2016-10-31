@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="style/public.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="style/Prompt.css">
+<link rel="stylesheet" type="text/css" href="style/checkbox.css">
+<link rel="shortcut icon" href="images/logo.ico">
+<title>城市快递QUICKLY</title>
+<style>
+body, html {
+	background: #edecda;
+}
+</style>
+</head>
+
+<body>
+<div id="container"></div>
+<div class="hidden">
+  <input type="tel">
+</div>
+<script type="text/templates" id="main-tmpl">
+	 <header class="header">
+		<a href="javascript:void(0)" class="index-icon" onClick="$('#nav').css('left','0px')"></a>
+		<h1>快客利</h1>
+		<a href="" class="dingwei"><span class="index-icon2"></span><i>重庆</i></a>
+	</header>
+	<article>
+	  <!--scroll-->
+	  <div class="scroll relative">
+		<div class="scroll_box" id="scroll_img">
+		<ul class="scroll_wrap">
+		  <li><a href="#" style="background:url(images/aaa.gif) no-repeat; background-size:100%;"><img src="images/bannner.gif" width="100%" height="100%" /></a></li>
+		  <li><a href="#" style="background:url(images/aaa.gif) no-repeat; background-size:100%;"><img src="images/bannner.gif" width="100%" height="100%" /></a></li>
+		  <li><a href="#" style="background:url(images/aaa.gif) no-repeat; background-size:100%;"><img src="images/bannner.gif" width="100%" height="100%" /></a></li>
+		</ul>
+		</div>
+	  <ul class="scroll_position" id='scroll_position'>
+		  <li class="on"><a href="javascript:void(0);">1</a></li>
+		  <li><a href="javascript:void(0);">2</a></li>
+		  <li><a href="javascript:void(0);">3</a></li>
+	  </ul>
+	  </div>
+	  <!--scroll-->
+	</article>
+	<section class="index-table tab_title">
+		<ul id="toolbar">
+			<li class="current" data-index="0"><span><i class="table-title-icon1"></i></span><p>帮我送</p></li>
+			<li  data-index="1"><span><i class="table-title-icon2"></i></span><p>帮我取</p></li>
+			<li  data-index="2"><span><i class="table-title-icon3"></i></span><p>帮我买</p></li>
+			<div class="clears"></div>
+		</ul>
+	</section>
+	<section class="index-nr tab_nr" id="nav-contianer">
+		
+	</section>
+	<div class="kk"></div>
+	<footer>
+		<p><span>您附近有<i>3</i>位跑男</span></p>
+		<input type="button" value="呼叫跑男" onclick="location.href='buy-order.html'">
+	</footer>
+	<!--nav start-->
+	<nav id="nav">
+		<div class="nav-left">
+			<div class="nav-left-top">
+				<a href="personal-information.html">
+					<div class="nav-left-top-img" style="background:url(images/nav-left-top-img.gif) no-repeat; background-size:100%;"></div>
+					<div class="nav-left-top-content">
+						<p>13310268613</p>
+					</div>
+					<div class="clears"></div>
+					<div class="nav-left-top-sy"><p>爽约率0%</p></div>
+				</a>
+			</div>
+			<div class="jifen">
+				<a href="my-integral.html"><span>积分</span><i>250</i></a>
+			</div>
+			<div class="nav-left-nav">
+				<ul>
+					<li class="current">
+						<a href="order.html"><i class="nav-icon1"></i><span>我的订单</span></a>
+					</li>
+					<li>
+						<a href="address-Administration.html"><i class="nav-icon2"></i><span>地址管理</span></a>
+					</li>
+					<li>
+						<a href="account.html"><i class="nav-icon3"></i><span>账户管理</span></a>
+					</li>
+					<li>
+						<a href="coupon.html"><i class="nav-icon4"></i><span>我的优惠券</span></a>
+					</li>
+					<li>
+						<a href="integral.html"><i class="nav-icon6"></i><span>积分商城</span></a>
+					</li>
+					<li>
+						<a href="tuiguang.html"><i class="nav-icon7"></i><span>活动推广</span></a>
+					</li>
+					<!--<li>
+						<a href="my-complaint.html"><i class="nav-icon5"></i><span>我的投诉</span></a>
+					</li>-->
+					<li>
+						<a href="#"><i class="nav-icon8"></i><span>退出登录</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="nav-right" onclick="$('#nav').css('left','-1000px')"></div>
+		<div class="clears"></div>
+	</nav>
+	<section class="shur" id="shur">
+		<header class="header">
+			<h1>填写地址</h1>
+			<a href="javascript:void(0)" onClick="hide()" class="icon-angle-left"></a>
+		</header>
+		<section class="address-title address-title2 tab_title">
+			<ul>
+				<li class="current">常用地址</li>
+				<li>收藏地址</li>  
+				<div class="clears"></div>  
+			</ul>
+		</section>
+		<section class="address-content address-content3 tab_nr">
+			<div class="address-block address-block2 tab_block">
+			<section class="fill-in">
+				<p><span>联系人</span><input type="text" placeholder="填写联系人"></p>
+				<p><span>手机号</span><input type="text" placeholder="填写手机号"></p>
+				<p><span>服务地址</span><input type="text" placeholder="填写服务地址"></p>
+				<p><span>详细地址</span><input type="text" placeholder="补写详细地址"></p>
+			</section>
+			<section class="baocun">
+				<input type="button" value="保存" onClick="hide();"/>
+			</section>
+			</div>
+			<div class="address-block address-block2 tab_block" style="display:none;">
+				<ul>
+					<li>
+						<div class="address-left">
+							<div class="address-left-top"><span>西一打</span><i>133****8612</i><div class="clears"></div></div>
+							<p>重庆市渝北区华宇北城1</p>
+						</div>
+						<div class="clears"></div>
+					</li>
+					<li>
+						<div class="address-left">
+							<div class="address-left-top"><span>西一打</span><i>133****8612</i><div class="clears"></div></div>
+							<p>重庆市渝北区华宇北城2</p>
+						</div>
+						<div class="clears"></div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</section>
+</script> 
+<script type="text/templates" id="sc">
+		<header class="header" id="headers">
+			<h1>配送</h1>
+			<a href="javascript:void(0)" class="icon-angle-left"></a>
+		</header>
+		<section class="Distribution">
+			<textarea placeholder="重量超过25公斤，建议开车过来拿" id="textareaC"></textarea>
+			<p id="filebg">
+				<i id="p1">
+					<input type="file" value="" id="file">
+				</i>
+			</p>
+		</section>
+		<section class="Distribution-message" id="Distribution-message">
+			<h1>推荐留言</h1>
+			<p>
+				<span>重量超过25公斤</span>
+				<span style="background:#c6e4c0;">体积比较大</span>
+				<span style=" background:#cbde73;">轻拿轻放</span>
+				<span style="background:#e7687d;">物品易碎</span>
+				<span style="background:#edb3c9;">收货人亲自接收</span>
+			</p>
+		</section>
+		<section class="Distribution-list">
+			<ul>
+				<li id="note2">
+					<span>东西预算价格</span>
+					<i>选择价格</i>
+					<b class="icon-angle-right"></b>
+					<div class="clears"></div>
+				</li>
+				<li>
+					<span>商品分类</span>
+					<select>
+						<option id="0">请选择分类</option>
+						<option>烟酒类(押金￥50元)</option>
+					</select>
+					<i>请选择分类</i>
+					<b class="icon-angle-right"></b>
+					<div class="clears"></div>
+				</li>
+				<li>
+					<span>送达时间</span>
+					<select>
+						<option id="1">请选择到达时间</option>
+						<option>15:00-16:00</option>
+					</select>
+					<i>请选择到达时间</i>
+					<b class="icon-angle-right"></b>
+					<div class="clears"></div>
+				</li>
+				<li>
+					<span>配带保温箱</span>
+					<div class="model-10">
+						<div class="checkbox" onClick="fu()">
+							<input type="checkbox" id="l"><label></label>
+						</div>
+					</div>
+					<div class="clears"></div>
+				</li>
+				<li>
+					<span>取货免打扰</span>
+					<div class="model-10">
+						<div class="checkbox" onClick="fu2()">
+							<input type="checkbox" id="e"><label></label>
+						</div>
+					</div>
+					<div class="clears"></div>
+				</li>
+				<div class="note-save">
+					<input type="button" value="保存">
+				</div>
+		</ul>
+	</section>
+	<section class="classification" id="classificationd">
+		<div class="classification-content" id="classificationc">
+			<div class="classification-title">
+				<a href="javascript:void(0)" id="qx">取消</a>
+					<h1>选择价格</h1>
+				<a href="javacript:void(0)">确定</a>
+			</div>
+			<div class="classification-input">
+				<span><input type="radio" name="classification2" value=""><strong><b></b></strong><input type="text" placeholder="请输入价格" class="jiag" id="jg-input"><i>元</i></span>
+				<span><input type="radio" name="classification2" value=""><strong><b></b></strong><i id="jg-html">我不知道价格</i></span>
+			</div>
+		</div>
+	</section>
+</script> 
+<!--送东西-->
+<script type="text/templates" id='helpMe-send-tmpl'>
+	<!--送东西内容 start-->
+	<div class="index-block tab_block">
+		<div class="index-bian1">
+			<p><a href="javascript:void(0)" onClick="show()"><b><i></i><span>输入收货地址</span></b><b><span>电话</span></b></a><strong class="heart" rel="like"></strong></p>
+			<p><a href="javascript:void(0)"><b><i></i><span>输入取货地址</span></b><b><span>电话</span></b></a><strong class="heart" rel="like"></strong></p>
+			<div class="ll"></div>
+		</div>
+		<div class="index-bian2">
+			<p><a href="javascript:void(0)" onClick="note('take')"><i class="icon-pencil"></i><span>编辑备注 具体事项</span></a></p>
+		</div>
+	</div>
+	<!--送东西内容 end-->
+</script>
+<script type="text/templates" id='help-me-get-tmpl'>
+	<!--取东西内容 start-->
+	<div class="index-block tab_block">
+		<div class="index-bian1">
+			<p><a href="javascript:void(0)"><b><i></i><span>输入取货地址</span></b><b><span>电话</span></b></a><strong class="heart" rel="like"></strong></p>
+			<p><a href="javascript:void(0)"><b><i></i><span>输入收货地址</span></b><b><span>电话</span></b></a><strong class="heart" rel="like"></strong></p>
+			<div class="ll"></div>
+		</div>
+		<div class="index-bian2">
+			<p><a href="javascript:void(0)" onClick="note('take')"><i class="icon-pencil"></i><span>编辑备注 具体事项</span></a></p>
+		</div>
+	</div>
+	<!--取东西内容 end-->
+</script>
+<script type="text/templates" id="help-me-buy-tmpl">
+	<!--买东西 start-->
+	<div class="index-block tab_block">
+		<div class="index-bian1">        	
+			<p><a href="javascript:void(0)"><b><i></i><span>输入购买地址</span></b><b><span>电话</span></b></a><strong class="heart" rel="like"></strong></p>
+			<p><a href="javascript:void(0)"><b><i></i><span>输入收货地址</span></b><b><span>电话</span></b></a><strong class="heart" rel="like"></strong></p>
+		 </div>
+		<div class="index-bian2">
+			<p><a href="javascript:void(0)" onClick="note('buy')"><i class="icon-pencil"></i><span>编辑备注 具体事项</span></a></p>
+		</div>
+	</div>
+	<!--买东西 end-->
+</script>
+ 
+<script src="jquery/jquery-2.1.4.min.js"></script> 
+<script src="jquery/plug-in.js"></script> 
+<script src="jquery/hhSwipe.js"></script> 
+<script src="jquery/tc.js"></script> 
+<script src="jquery/note.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+		//获得渲染容器
+		var container = $('#container'),mainTmpl = $('#main-tmpl');
+		
+		//加载首页内容到容器
+		var mainTmplHtml = mainTmpl.html();
+		container.html(mainTmplHtml);
+		
+		//加载帮我送到nav容器
+		var navContainer = $('#nav-contianer');
+		
+		//帮我买、帮我送、帮我取对应的回调列表
+		var functionMaps = [function(){
+			var helpMeSendTmpl = $('#helpMe-send-tmpl').html();
+			navContainer.html(helpMeSendTmpl);
+		},function(){
+			var helpMeGetTmpl = $('#help-me-get-tmpl').html();
+			navContainer.html(helpMeGetTmpl);
+		},function(){
+			var helpMeBuyTmpl = $('#help-me-buy-tmpl').html();
+			navContainer.html(helpMeBuyTmpl);	
+		}];
+		
+		//绑定帮我买、帮我送、帮我取的切换特效
+		$('#toolbar li').click(function(){
+			var index = this.dataset['index'];
+			$('#toolbar li').removeClass('current');
+			this.className = 'current';
+			functionMaps[index]();
+		});
+		//初始化默认渲染帮我送
+		functionMaps[0].call($('#toolbar li').get(0));
+		
+		
+		/*地址定位查出范畴所弹出的提示*/
+		Prompt('对不起，您的地址已经超出了我们的服务范围！')
+		
+		var slider = Swipe(document.getElementById('scroll_img'), {
+		auto: 2000,
+		continuous: true,
+		callback: function(pos) {
+			var i = bullets.length;
+			while (i--) {
+				bullets[i].className = ' ';
+			}
+			bullets[pos].className = 'on';
+		}
+		});
+		var bullets = document.getElementById('scroll_position').getElementsByTagName('li');
+		$(function(){
+			$('.scroll_position_bg').css({
+				width:$('#scroll_position').width()
+			});
+		});
+	}
+	function show(){
+		$("#shur").css("right","0px");
+		$("body").css("overflow","hidden");
+	}
+	function hide(){
+		$("#shur").css("right","-1000px");
+		$("body").css("overflow","auto");
+	}
+</script>
+</body>
+</html>

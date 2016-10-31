@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+<meta name="author" content="Codrops" />
+<title>城市快递QUICKLY</title>
+<link rel="stylesheet" type="text/css" href="style/public.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+<script src="jquery/jquery-2.1.4.min.js"></script>
+<style>
+body,html{ background:#38113e;}
+</style>
+</head>
+
+<body>
+<section class="tuiguang-title">
+	<img src="images/tuiguang-img1.gif" alt="">
+</section>
+<section class="tuiguang-input">
+	<input type="button" value="邀请好友，您再得30元" onClick="fenx()">
+</section>
+<section class="tuiguang-nr">
+	<p><img src="images/tuigunag-img2.gif" alt=""></p>
+    <h4>活动规则</h4>
+    <span>
+        <i>1、每一位您推荐的新伙伴注册并使用快客利下单后，您即获得30元优惠券；</i>
+        <i>2、被推荐的新伙伴注册快客利账号即获得100元优惠券；</i>
+        <i>3.快客利对活动保持最终解释权</i>
+    </span>
+</section>
+<script type="text/javascript">
+function fenx(){
+	$("body").append("<section class='fenx' id='fenx'><div class='fenx-img'><img src='images/fenxingb.png' alt=''/></div><div class='fenx-an'><input type='button' value='' onclick='closes()'></div></section>")
+	$("#fenx").show();
+}
+function closes(){
+	$("#fenx").remove();
+}
+</script>
+</body>
+</html>

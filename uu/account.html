@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="style/public.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+<title>城市快递QUICKLY</title>
+<script src="jquery/jquery-2.1.4.min.js"></script>
+<script src="jquery/tab.js"></script>
+<script src="jquery/tc.js"></script>
+<style>
+body,html{ background:#fff;}
+</style>
+</head>
+
+<body>
+<header class="header">
+	<h1>账户管理</h1>
+    <a href="javascript:history.go(-1);" class="icon-angle-left"></a>
+</header>
+<section class="account">
+	<div class="accout-nj">
+    	<a href="record.html">
+        	<i>?</i><span>账户明细</span>
+        </a>
+    </div>
+	<div class="account-icon">
+    	<h1><img src="images/balance-icon.png" alt=""></h1>
+        <h3>我的余额</h3>
+        <h2>￥52.00</h2>
+    </div>
+    <div class="account-input">
+    	<p><input type="button" value="充值" onClick="Prepaids($('#Prepaid'),$('#Prepaid-content'))"></p>
+    	<p><input type="button" value="提现" onClick="Prepaids($('#Withdrawals'),$('#Withdrawals-content'))"></p>
+    </div>
+</section>
+<!--充值弹窗 start-->
+<section class="Prepaid tc-big" id="Prepaid">
+	<div class="Prepaid-content tc" id="Prepaid-content">
+    	<h1>请输入充值金额</h1>
+        <p>
+        	<span>20<b>元</b><i></i><input type="radio" name="Prepaid"></span><span>50<b>元</b><i></i><input type="radio" name="Prepaid"></span><span>100<b>元</b><i></i><input type="radio" name="Prepaid"></span><span>200<b>元</b><i></i><input type="radio" name="Prepaid"></span>
+        </p>
+    	<div class="Prepaid-text">
+        	<input type="text" placeholder="请输入其他充值金额"/>
+        </div>
+    	<div class="Prepaid-button">
+        	<input type="button" value="立即充值"/>
+        </div>
+    </div>
+</section>
+<!--充值弹窗 end-->
+<!--充值弹窗 start-->
+<section class="Prepaid tc-big" id="Withdrawals">
+	<div class="Prepaid-content tc" id="Withdrawals-content">	
+    	<div class="Prepaid-je">
+        	<div class="Prepaid-left">
+            	<p>可提现金额</p>
+                <span>￥52.00</span>
+            </div>
+            <div class="Prepaid-right">
+            	<p>输入提现金额</p>
+                <input type="text" placeholder="提现金额"/>
+            </div>
+            <div class="clears"></div>
+        </div>
+    	<div class="Prepaid-button">
+        	<input type="button" value="立即充值" onClick="liji()"/>
+        </div>
+    </div>
+</section>
+<!--充值弹窗 end-->
+<!--提现申请提交成功弹窗 start-->
+
+<!--提现申请提交成功弹窗 end-->
+<script type="text/javascript">
+$(function(){
+	$('.Prepaid-content').children('p').children('span').click(function(){
+		if($(this).children('input').is(':checked')){
+			$(this).removeClass('current');
+			$(this).children('input').prop('checked','');
+		}else{
+			$(this).addClass('current');
+			$(this).children('input').prop('checked','checked');
+			$(this).nextAll('span').removeClass('current');
+			$(this).prevAll('span').removeClass('current');
+		}
+	})
+})
+</script>
+</body>
+</html>

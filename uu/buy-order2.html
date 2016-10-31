@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="style/public.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="style/Prompt.css">
+<title>城市快递QUICKLY</title>
+<script src="jquery/jquery-2.1.4.min.js"></script>
+<script src="jquery/plug-in.js"></script>
+</head>
+
+<body>
+<!--买东西-->
+<header class="header">
+	<h1>订单确认</h1>
+    <a href="javascript:history.go(-1);" class="icon-angle-left"></a>
+</header>
+<section class="buy-order">
+    <section class="buy-order-top">
+        <h1>取、送东西</h1>
+        <div class="buy-order-top-q">
+            <span><i>送</i></span>
+            <p><strong>重庆市渝北区泰山大道56号  华宇北城中央东区  6幢 3单元  18-3</strong><a href="tel:18655248531"><b class="icon-phone"></b>18655248531</a></p>
+            <div class="clears"></div>
+        </div>
+        <div class="buy-order-top-q">
+            <span><i>送</i></span>
+            <p><strong>重庆市渝北区泰山大道56号  华宇北城中央东区  6幢 3单元  18-3</strong><a href="tel:18655248531"><b class="icon-phone"></b>18655248531</a></p>
+            <div class="clears"></div>
+        </div>
+    </section>
+</section>
+<section class="beiz">
+	<h1><span>配送备注</span></h1>
+    <div class="beiz-content">
+    	<p>重量超过25公斤，建议开车过来</p>
+        <span style="background:url(images/Distribution-img.gif) no-repeat; background-size:100%;"></span><span style="background:url(images/Distribution-img.gif) no-repeat; background-size:100%;"></span>
+    </div>
+    <div class="beiz-bottom">
+        <p>配带保温箱</p>
+        <p>取货免打扰</p>
+        <p>到货时间  2016/03/09  11:00</p>
+    </div>
+</section>
+<section class="buy-order-content">
+	<div class="buy-order-content-top">
+        <p><i></i><span>运费:</span><b>￥<strong id="yunfei">12</strong></b></p>
+        <p style="display:none;"><i></i><span>押金:</span><b>￥<strong id="yajin">0</strong></b></p>
+    </div>
+    <div class="buy-order-content-yh">
+    	<i></i><span>优惠券</span><b class="icon-angle-right"></b><p><select id="youhui"><option id="0">请选择优惠券</option><option id="3">3元优惠券</option></select></p>
+        <div class="clears"></div>
+    </div>
+    <div class="buy-order-content-bottom">
+    	<span>合计</span>
+        <p class="heji">￥19</p>
+        <div class="clears"></div>
+    </div>
+</section>
+<section class="buy-order-content-zf" id="zf">
+	<div class="yue"><span>余额支付</span><p><i><b class="icon-ok"></b></i><input type="radio" name="zhifu" id="1"></p><div class="clears"></div></div>
+	<div class="yue"><span>微信支付</span><p><i><b class="icon-ok"></b></i><input type="radio" name="zhifu" id="2"></p><div class="clears"></div></div>
+</section>
+<div class="kk"></div>
+<section class="zhifu">
+	<p><span>合计：</span><i class="heji">￥19</i><input type="button" value="确认" onClick="ding()"></p>
+</section>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$("#zf").children("div").click(function(){
+		if($(this).children("p").children("input").is(":checked")){
+			$(this).children("p").children("input").prop('checked','');
+			$(this).children("p").children("i").removeClass("current");
+		}else{
+			$(this).children("p").children("input").prop('checked','checked');
+			$(this).children("p").children("i").addClass("current");
+			$(this).nextAll("div").children("p").children("i").removeClass("current");
+			$(this).prevAll("div").children("p").children("i").removeClass("current");
+		}	
+	})
+	JUJ()
+	$("#youhui").change(function(){
+		JUJ()
+	})
+});
+function JUJ(){
+	var yunfei=parseInt($("#yunfei").html());
+	var yajin=parseInt($("#yajin").html());
+	var youhuiId=parseInt($("#youhui option:selected").attr('id'));
+	$(".heji").html('￥'+((yunfei+yajin)-youhuiId))
+}
+function ding(){
+	var inpuy=$("input[name=zhifu]:checked").attr('id');
+	if(inpuy==undefined){
+		Prompt('请选择支付方式')
+	}else if(inpuy==1){
+		selectivity('余额不足，使用微信支付','否','是')
+	}else{
+		location.href='payment-complete.html'
+	}
+}
+</script>
+</body>
+</html>

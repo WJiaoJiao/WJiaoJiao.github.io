@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+<meta name="author" content="Codrops" />
+<title>城市快递QUICKLY</title>
+<link rel="stylesheet" type="text/css" href="../style/public.css">
+<link rel="stylesheet" type="text/css" href="../style/style.css">
+<link rel="stylesheet" type="text/css" href="../style/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="../style/Prompt.css">
+<script src="../jquery/plug-in.js"></script>
+</head>
+
+<body>
+<header class="header">
+	<h1>上传签收单</h1>
+    <a href="javascript:history.go(-1);" class="icon-angle-left"></a>
+</header>
+<section class="Distribution-title">
+	<h1>请如实上传签收单</h1>
+</section>
+<section class="Distribution">
+    <p id="filebg"><i id="p1"><input type="file" value="" id="file"></i></p>
+</section>
+<footer>
+	<input type="button" value="上传" onClick="selectivity('您未上传签收单照片，是否提交？','取消','确定')">
+</footer>
+<script type="text/javascript">
+window.onload=function(){
+	ok();
+}
+function ok(){
+	var input=document.getElementById("file");
+	var result=document.getElementById("filebg");
+	var p1=document.getElementById('p1');
+	if(typeof FileReader=="undefined"){
+		result.innerHTML="抱歉您的浏览器不支持  FileReader";
+		input.setAttribute("disabled","disabled")
+	}
+	else
+	{
+		input.addEventListener("change",function(){
+			var file = this.files[0];
+			if(!/image\/\w+/.test(file.type)){
+				alert("文件必须为图片");
+				return false;
+			}
+			var reader=new FileReader();//HTML5接口本地预览图片
+			reader.readAsDataURL(file);
+			reader.onload=function(e){
+				if(result.children.length>7){
+					 Prompt('最多添加7张图片')
+				}else{
+					var span=document.createElement("span");
+					result.insertBefore(span,p1);
+					span.style.background='url('+this.result+') center no-repeat';
+					span.style.backgroundSize='100%';
+				}
+				//if(result.){}
+			//result.innerHTML="<span><img src="+this.result+" alert=''/></span>";
+			console.info(this.result)
+			}
+		},false);
+	}
+}
+</script>
+</body>
+</html>

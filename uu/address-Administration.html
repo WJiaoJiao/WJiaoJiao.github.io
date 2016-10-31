@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" type="text/css" href="style/public.css">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="style/font-awesome.css">
+<title>城市快递QUICKLY</title>
+<script src="jquery/zepto.js"></script>
+<script src="jquery/tab.js"></script>
+<style>
+body,html{ background:#f1f5f8;}
+</style>
+</head>
+
+<body>
+<header class="header">
+	<h1>地址管理</h1>
+    <a href="javascript:history.go(-1);" class="icon-angle-left"></a>
+</header>
+<section class="address-title tab_title">
+	<ul>
+        <li>收藏地址</li>  
+    </ul>
+</section>
+<section class="address-content tab_nr">
+	<div class="address-block tab_block">
+    	<ul>
+        	<li>
+            	<div class="address-left">
+                	<div class="address-left-top"><span>西一打</span><i>133****8612</i><div class="clears"></div></div>
+                    <p>重庆市渝北区华宇北城</p>
+                </div>
+                <div class="address-button"><a href="fill in-address.html"></a><i></i></div>
+                <div class="clears"></div>
+            </li>
+        	<li>
+            	<div class="address-left">
+                	<div class="address-left-top"><span>西一打</span><i>133****8612</i><div class="clears"></div></div>
+                    <p>重庆市渝北区华宇北城</p>
+                </div>
+                <div class="address-button"><a href="fill in-address.html"></a><i></i></div>
+                <div class="clears"></div>
+            </li>
+        </ul>
+        <div class="address-jia"><a href="fill in-address.html"><i></i><span>新增收货地址</span></a></div>
+    </div>
+</section>
+<script type="text/javascript">
+function loading2(judge){
+	if(judge==true){
+		var bodys=document.body;
+		var loading2=document.createElement('div');
+		loading2.setAttribute('class','loading2');
+		loading2.innerHTML='<p><span></span><i>保存中请稍后</i></p>' 
+		bodys.appendChild(loading2);	
+	}else{
+		
+	}
+}
+</script>
+</body>
+</html>
