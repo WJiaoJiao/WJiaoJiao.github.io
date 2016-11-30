@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ajax新闻</title>
+		<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+		<style>
+			*{box-sizing: initial;}
+			body{background: url("bg.jpg") no-repeat;color: #fff;margin: 0;padding: 0;}
+			.form-inline{width: 20%;margin: auto;margin-top: 20px;min-width: 270px;}
+			.form-group input{box-sizing: border-box;}
+			.all{width: 96%;margin: auto;min-width: 1310px;margin-top: 15px;}
+			.container{width: 250px;height: 270px;background: rgba(0, 0, 0, 0.27);float: left;margin-left: 38px;margin-top: 10px;}
+			.desc,.time{padding: 10px;}
+			.fl{float: left;}
+			.fr{float: right;}
+			.clear{clear: both;}
+			a{color: #fff;text-decoration: none;}
+			.container p{padding: 5px 10px;}
+			.blank30{margin-top: 30px;}
+			.switch{position: absolute;right: 0;top: 45%;width: 50px;}
+			.up,.down{cursor: pointer;}
+		</style>
+	</head>
+	<body>
+		<div class="head">
+			<form class="form-inline" role="form" onsubmit="return false;">
+				<div class="form-group">
+					<input type="text" class="form-control word" id="name" placeholder="请输入您要搜索的内容" value="">
+				</div>
+				<input type="submit" class="btn btn-default search"value="提交">
+			</form>
+
+		</div>
+		<div class="all"></div>
+		<div class="clear"></div>
+		<div class="switch">
+			<img src="up.png" class="up"/>
+			<div class="blank30"></div>
+			<img src="down.png" class="down"/>
+		</div>
+	</body>
+</html>
+<script type="text/template" id="template">
+	<div class="container">
+		<div class="desc fl">
+			description
+		</div>
+		<div class="time fr">
+			ctime
+		</div>
+		<div class="clear"></div>
+		<a href="url_link" target="_blank">
+			<img width="250" height="170" style="display: inline-block;" src="url_pic"/>
+			<p>title</p>
+		</a>			
+	</div>
+</script>
+<script type="text/javascript">
+	function getData(page){
+		var data = {};
+		data['num'] = 8;
+		data['page'] = page;
+		var word = $(".word").val();
+		if(word){
+			data['word'] = word;
+		}
+		$.ajax({
+			type:"get",
+			url:"http://apis.baidu.com/txapi/tiyu/tiyu",
+			headers:{
+				apikey:'348822e2ff355dc5ea6fdce1cde738cb'
+			},
+			data:data,
+			success:function(data){
+				if(data.code!=200){
+					console.log(data.msg);
+					alert(data.msg);
+					//window.location.reload();
+					return;
+				}
+				var template = $('#template').html();
+				var newslist = data.newslist;
+				console.log(data);
+				var html = [];
+				for(var i=0;i<newslist.length;i++){
+					html.push(
+						template.replace(/description/g,newslist[i].description)
+						.replace(/title/g,newslist[i].title)
+						.replace(/url_link/g,newslist[i].url)
+						.replace(/ctime/g,newslist[i].ctime)
+						.replace(/url_pic/g,newslist[i].picUrl)
+					);
+				}
+				$('.all').html(html.join(''));			
+			}
+		});
+	}
+	/*分页开始*/
+	var page = 1;
+
+	function paging(next){
+		var _next = page + next;
+		if(_next <=0 ){
+			console.log('已经是第一页了！');
+		}else{
+			$('.all').html('loading....');
+			getData(_next);
+			page = _next;
+			$('#page').html(page);
+		}
+	}
+	/*分页结束*/
+	
+	$(document).ready(function(){
+		getData(page);
+		$(".search").click(function(){
+			page = 1;
+			paging(0);		
+		});
+		$(".up").click(function(){
+			paging(-1);
+		});
+		$(".down").click(function(){
+			paging(1);
+		});
+	});
+	
+</script>
