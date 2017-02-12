@@ -22,7 +22,7 @@ $(function(){
 	})
 	/*首页子导航切换 end*/
 	
-	/*点击加关注 begin*/
+	/*首页点击加关注 begin*/
 	$('.index_attention_content_hunterAtt a').click(function(){
 		var self = $(this);
 		if(self.hasClass('a_click')){
@@ -33,7 +33,7 @@ $(function(){
 			self.html('已关注');
 		}
 	});
-	/*点击加关注 end*/
+	/*首页点击加关注 end*/
 	
 	/*header返回按钮 begin*/
 	$('.arrow_back').tap(function(){
@@ -66,6 +66,19 @@ $(function(){
 		$('.teachers_attention_container').show();
 	});
 	/*teachers.html导师子导航切换 end*/
+	
+	/*teachers.html点击加关注 begin*/
+	$('.teachers_attention_content_hunterAtt a').click(function(){
+		var self = $(this);
+		if(self.hasClass('a_click')){
+			self.removeClass('a_click');
+			self.html('关注');
+		}else{
+			self.addClass('a_click');
+			self.html('已关注');
+		}
+	});
+	/*teachers点击加关注 end*/
 	
 	/*mine.html我的 二维码 begin*/
 	var html_width = $(document).width();
@@ -136,4 +149,10 @@ $(function(){
 		$(this).addClass('write_info_price_choice_on');
 	});
 	/*write_info.html 价格切换  end*/
+	
+	/*search.html取消返回首页  begin*/
+	$('.cancel_btn').tap(function(){
+		location.href = "index.html";
+	});
+	/*search.html取消返回首页  end*/
 })
