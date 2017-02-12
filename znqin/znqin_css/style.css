@@ -100,10 +100,10 @@ img{display: block;}
 .zj_text ul li{list-style-type: square;font-size: 24px;color: #fff;line-height: 170%;}
 .zj_text p{font-size: 21.34px;color: #f6efe4;line-height: 160%;}
 
-.alt2{ width:100%;overflow:hidden;top: 0;position: absolute;top: 71px;left: 463px;}
-.alt2_tit{ width:1100px; height:113px; margin:0 auto; padding-top:30px; }
-.alt2_1{ width:170px; float:left;}
-.alt2_2{ width:700px; float:left;}
+.alt2{width:100%;overflow:hiddenposition: absolute;top: 71px;left: 588px;}
+.alt2_tit{height:113px; margin:0 auto; padding-top:30px; }
+.alt2_1{width:170px; float:left;}
+.alt2_2{float:left;}
 .anli_tt11 a{display:block;width:112px; height:95px; background:url(../znqin_img/alt1.png) no-repeat left; cursor:pointer;}
 .anli_tt12 a{display:block;width:112px; height:95px; background:url(../znqin_img/alt1_on.png) no-repeat left; cursor:pointer;}
 .anli_tt21 a{display:block;width:112px; height:95px; background:url(../znqin_img/alt2.png) no-repeat left; cursor:pointer;}
