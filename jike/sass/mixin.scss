@@ -1,0 +1,12 @@
+@mixin absolute_fix ($top,$left,$right,$bottom,$x,$y){    
+    position:absolute;
+    top:$top;
+    left:$left;
+    right:$right;
+    bottom: $bottom;
+    transform:translate($x,$y);  
+} 
+@mixin opacity($opacity){
+    opacity: $opacity;
+    filter:alpha(opacity=$opacity*100);
+}

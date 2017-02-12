@@ -1,0 +1,24 @@
+.part5 {
+  padding-bottom: 40px;
+}
+
+.part5_detail_each {
+  width: 430px;
+  height: 120px;
+  margin-left: 140px;
+}
+.part5_detail_each h3 {
+  font-size: 20px;
+  color: #465566;
+}
+.part5_detail_each p {
+  font-size: 14px;
+  color: #7c8389;
+  margin-top: 20px;
+}
+
+.part5_detail_each:nth-child(2n-1) {
+  margin-left: 0;
+}
+
+/*# sourceMappingURL=part5.css.map */

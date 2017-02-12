@@ -1,0 +1,27 @@
+.sub_title{
+    padding-top: 78px;
+    padding-bottom: 60px;
+    text-align: center;
+    h2{
+        font-size: 24px;
+        color: #465566;
+        font-weight: 100;
+        position: relative;
+        &::after{
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: #35b558;
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translate(-50%,0);
+            
+        }
+    }
+    p{
+        font-size: 16px;
+        color: #7a818c;
+        margin-top: 26px;
+    }
+}

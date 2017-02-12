@@ -1,0 +1,28 @@
+.part2_content .sub_title {
+  padding-bottom: 8px;
+}
+
+.part2_detail {
+  padding: 0 46px;
+  text-align: center;
+}
+.part2_detail .part2_detail_each {
+  width: 224px;
+  margin-left: 118px;
+  margin-top: 52px;
+}
+.part2_detail .part2_detail_each h3 {
+  font-size: 20px;
+  color: #465566;
+  margin-top: 20px;
+}
+.part2_detail .part2_detail_each span {
+  font-size: 16px;
+  color: #939da6;
+  line-height: 35px;
+}
+.part2_detail .part2_detail_each:nth-child(3n-2) {
+  margin-left: 0;
+}
+
+/*# sourceMappingURL=part2.css.map */

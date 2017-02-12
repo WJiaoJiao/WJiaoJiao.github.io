@@ -1,0 +1,65 @@
+.part4_detail{
+    padding: 0 10px;
+    .part4_detail_circle{
+        width: 168px;
+        height: 168px;
+        background: #fff;
+        border-radius: 50%;
+        border: 1px solid #ebecef;
+        position: relative;
+        .part4_detail_cont{
+            @include absolute_fix(50%,50%,none,none,-50%,-50%);
+            width: 100%;
+            text-align: center;
+            .part4_detail_cont_icon{
+                
+            }
+            .part4_icon_one{
+                background: url(../img/part4_1.png) no-repeat;
+                width: 32px;
+                height: 36px;
+                margin-left: 69px;
+            }
+            .part4_icon_two{
+                background: url(../img/part4_2.png) no-repeat;
+                width: 31px;
+                height: 37px;
+                margin-left: 69px;
+            }
+            .part4_icon_three{
+                background: url(../img/part4_3.png) no-repeat;
+                width: 38px;
+                height: 36px;
+                margin-left: 66px;
+            }
+            .part4_icon_four{
+                background: url(../img/part4_4.png) no-repeat;
+                width: 36px;
+                height: 31px;
+                margin-left: 67px;
+            }
+            h3{
+                font-size: 16px;
+                color: #465566;
+                margin-top: 10px;
+            }
+            span{
+                display: inline-block;
+                font-size: 14px;
+                color: #a1a5aa;
+                margin-top: 6px;
+            }
+        }
+    }
+    .part4_detail_arrow{
+        width: 100px;
+        height: 168px;
+        position: relative;
+        .part4_detail_arrow_icon{
+            background: url(../img/part4_arrow.png) no-repeat;
+            width: 18px;
+            height: 34px;
+            @include absolute_fix(50%,50%,none,none,-50%,-50%);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.footer{
+    background: #f7f7f7;   
+    height: 100px;
+    padding-bottom: 100px;
+    .footer_content{
+        width: 1000px;
+        height: 100px;
+        margin: auto; 
+        position: relative;
+        .footer_logo{
+            width: 100px;
+            height: 37px;
+            background: url(../img/footer_logo.png);
+            @include absolute_fix(50%,0,none,none,0,-50%);
+        }   
+        .footer_copyright{
+            @include absolute_fix(50%,none,0,none,0,-50%);
+            p{
+                font-size: 14px;
+                color: #333333;
+                line-height: 25px;
+            }
+            p:first-child{
+                display: inline-block;
+            }
+            p:nth-child(2){
+                display: inline-block;
+                margin-left: 36px;
+            }
+            p:nth-child(3){
+                color: #999999;
+            }
+        }
+    }
+}

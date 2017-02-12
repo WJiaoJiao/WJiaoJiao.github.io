@@ -1,0 +1,195 @@
+.nav{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #EBECEF;
+    .nav_content{
+        height: 60px;
+        position: relative;
+        
+        .nav_logo{
+            width: 90px;
+            height: 33px;
+            background: url(../img/logo.png);
+            @include absolute_fix(50%,0,none,none,0,-50%);
+        }
+        .search_hide{
+            width: 850px;
+            height: 60px;
+            @include absolute_fix(none,none,0,none,0,0);
+            visibility: hidden;
+            opacity: 0;
+            @include opacity(0);
+            background: #fff;
+            transform-origin: right center;
+            transform: scale(0.1,1);
+            transition: all 0.4s;
+            .search_hide_l{
+                @include absolute_fix(50%,0,none,none,0,-50%);
+                .search_hide_icon{
+                    display: inline-block;
+                    color: #9eacb8;
+                    font-size: 22px;
+                    position: absolute;
+                }
+                input{
+                    border: none;
+                    height: 22px;
+                    outline: none;
+                    margin-left: 30px;
+                }
+            }
+            .search_hide_r{
+                @include absolute_fix(50%,none,0,none,0,-50%);
+                font-size: 14px;
+                a{
+                    display: inline-block;
+                    background: #f5f5f5;
+                    color: #808080;
+                    padding: 2px 4px;
+                    margin-right: 10px;
+                }
+                .close_btn{
+                    display: inline-block;
+                    margin-left: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .scale {           
+            transform: scale(1, 1);
+            @include opacity(1);          
+            z-index: 10;
+            visibility: visible;
+        }
+        
+        .nav_btn{
+            font-size: 22px;
+            color: #9eacb8;
+            @include absolute_fix(50%,none,10px,none,0,-50%);
+            z-index: 2;
+            .nav_icon{
+                margin-left: 30px;
+                height: 30px;
+                margin-top: 8px;
+            }
+            .nav_icon:hover{
+                color: #3fb860;
+                cursor: pointer;
+            }
+            .mobile{
+                position: relative;
+                .mobile_hide{
+                    width: 120px;
+                    height: 160px;
+                    @include absolute_fix(42px,-53px,none,none,0,0);
+                    background: #fff;
+                    visibility: hidden;
+                    @include opacity(0);                   
+                    transition: opacity 0.4s;
+                    .star_icon{
+                        display: block;
+                        width: 17px;
+                        height: 17px;
+                        border-left: 1px solid #EBECEF;
+                        border-top: 1px solid #EBECEF;
+                        transform: rotate(45deg);
+                        @include absolute_fix(-10px,55px,none,none,none,none);
+                        z-index: 1;
+                        background: #fff;
+                    }    
+                }
+                &:hover{
+                    .mobile_hide{
+                        visibility: visible;
+                        @include opacity(1);
+                    }   
+                }
+            }
+            .user{
+                position: relative;
+                .user_hide{
+                    width: 120px;
+                    height: 195px;
+                    background: #fff;
+                    @include absolute_fix(42px,none,-10px,none,0,0);
+                    visibility: hidden;
+                    @include opacity(0);                   
+                    transition: opacity 0.4s;
+                    .star_icon{
+                        display: block;
+                        width: 17px;
+                        height: 17px;
+                        border-left: 1px solid #EBECEF;
+                        border-top: 1px solid #EBECEF;
+                        transform: rotate(45deg);
+                        @include absolute_fix(-10px,none,12px,none,none,none);
+                        z-index: 1;
+                        background: #fff;
+                    }
+                    .register_login{
+                        font-size: 13px;
+                        text-align: center;
+                        font-weight: bold;
+                        margin-top: 10px;
+                        height: 35px;
+                        line-height: 35px;
+                        a{
+                            color: #888888;
+                            &:hover{
+                                color: #3fb860;
+                            }   
+                        }     
+                        &:hover{
+                          background: #f7f7f7;
+                        }  
+                        span{
+                            margin: 0 5px;
+                            color: #888888;
+                            &:hover{
+                                color: #888888;
+                            }
+                        }                 
+                    }
+                    li{
+                      height: 35px;
+                      line-height: 35px;  
+                      font-size: 13px;
+                      padding-left: 10px;
+                      color: #888888;
+                      &:hover{
+                          background: #f7f7f7;
+                          a{
+                            color: #3fb860;
+                          }                   
+                          &::before{
+                            color: #888888;
+                          }
+                      }
+                      &::before{
+                          margin-right: 10px;
+                      }
+                    }                   
+                    .study_center::before{
+                        content: '\e900';
+                    }
+                    .person::before{
+                        content: "\e921";
+                    }
+                    .bell::before{
+                        content: "\e901";
+                    }
+                    .cog::before{
+                        content: "\e994";
+                    }
+                }
+                &:hover{
+                    .user_hide{
+                        visibility: visible;
+                        @include opacity(1);
+                    }   
+                }
+            }
+        }
+    }
+}

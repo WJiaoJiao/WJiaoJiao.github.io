@@ -1,0 +1,16 @@
+.nav_content, .part1_content, .part2_content, .part3_content, .part4_content, .part5_content {
+  width: 1000px;
+  margin: auto;
+}
+
+.part1, .part3, .part5 {
+  background: #fff;
+  padding-bottom: 80px;
+}
+
+.part2, .part4 {
+  background: #f7f7f7;
+  padding-bottom: 80px;
+}
+
+/*# sourceMappingURL=common_all.css.map */
