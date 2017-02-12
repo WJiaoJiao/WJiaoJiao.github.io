@@ -100,7 +100,7 @@ img{display: block;}
 .zj_text ul li{list-style-type: square;font-size: 24px;color: #fff;line-height: 170%;}
 .zj_text p{font-size: 21.34px;color: #f6efe4;line-height: 160%;}
 
-.alt2{width:100%;position: absolute;top: 71px;left: 588px;}
+.alt2{width:100%;overflow:hidden;position: absolute;top: 71px;left: 588px;}
 .alt2_tit{height:113px; margin:0 auto; padding-top:30px; }
 .alt2_1{width:170px; float:left;}
 .alt2_2{float:left;}
