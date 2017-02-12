@@ -1,0 +1,27 @@
+.floating{
+    position: fixed;
+    @include width(120rem);
+    @include height(120rem);
+    right: (40rem / 200);
+    bottom: (50rem / 200);
+    background: #333a3f;
+    @include border_radius(50%);
+    color: #fff;
+    text-align: center;
+    z-index: 99;
+    .pinna{
+        display: block;
+        @include width(34rem);
+        @include height(51rem);  
+        position: absolute;
+        left: 50%;
+        top: (15rem / 200);
+        transform: translate(-50%,0);     
+    }
+    .write_info{
+        display: block;
+        color: #fffff;
+        text-align: center;
+        @include margin_top(75rem);
+    }
+}

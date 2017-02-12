@@ -1,0 +1,38 @@
+.listenDetail_header{
+    text-align: center;
+    line-height: (90rem / 200);
+    position: relative;
+    .arrow_back{
+        @include width(32rem);
+        @include height(32rem);
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: (20rem / 200);
+        transform: translate(0,-50%);
+    }
+}
+
+.index_question_container{
+    .listenDetail_btn{
+        a{
+            display: inline-block;
+            width: 100%;
+            @include height(70rem);
+            line-height: (70rem / 200);
+            text-align: center;
+            @include border_radius(30px);
+            color: #FFFFFF;            
+        }
+        .ask_btn{
+            background: #4f99fd;
+        }
+        .write_btn{
+            background: #45576c;
+        }
+        .open_btn{
+            border: 1px solid #4f99fd;
+            color: #4f99fd;
+        }
+    }
+}

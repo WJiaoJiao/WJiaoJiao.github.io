@@ -1,0 +1,241 @@
+.teachers_nav{
+    width: 100%;
+    @include height(78rem);
+    line-height: 0.39rem;
+    text-align: center;
+    background: $bg_color;
+    .teachers_nav_wrap{
+        padding: 0 0.1rem 0 0.1rem;
+        display: -webkit-flex;
+        .teachers_nav_recommend{
+            flex: 1;
+            position: relative;            
+        }
+        .teachers_line_move{
+            &::after{
+                content: '';
+                width: 100%;
+                height: 4px;
+                background: #2a93ec;
+                @include border_radius(5px);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all .3s ease-in;
+            }
+        }
+        .teachers_nav_lasted{
+            flex: 1;
+            position: relative; 
+        }
+        .teachers_nav_attention{
+            flex: 1;
+            position: relative; 
+        }
+    }
+}
+.teachers_recommend_container{
+    .swiper-container {
+        width: 100%;
+        @include height(380rem);
+    }
+    .swiper-slide {
+        height: (380rem / 200) !important;
+        text-align: center;
+        background: #FFFFFF;    
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        .swiper_slide_title {
+            width: 100%;
+            @include height(44rem);
+            line-height: (44rem / 200);
+            text-align: center;
+            color: #FFFFFF;
+            background: #333a3f;
+            position: absolute;
+            top: 0;
+        }
+        .swiper_slide_content {
+            width: 100%;
+            @include height(332rem);   
+            box-shadow: 0px 4px 3px rgba(226, 226, 226, 0.75);     
+            position: absolute;
+            left: 0;
+            bottom: (4rem / 200);
+            padding: 0.1rem 0.09rem 0.09rem;
+            box-sizing: border-box;
+            .swiper_slide_content_each {
+                width: (118rem / 200);
+                text-align: center;
+                margin-top: (32rem / 200);            
+                a{
+                    color: #999999;
+                }
+                img {
+                    @include width(89rem);
+                    @include height(89rem);
+                }
+                span {
+                    display: inline-block;
+                    margin-top: (10rem / 200);
+                    width: 100%;
+                }
+            }
+            .swiper_slide_content_each:first-child {
+                margin-top: 0;
+            }
+            .swiper_slide_content_each:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+    }
+    .label_recommend{
+        width: 100%;
+        @include height(80rem);
+        line-height: (80rem / 200);
+        span{
+            padding-left: (20rem / 200);
+            color: #999999;
+        }
+    }
+    .label_recommend_list{
+        width: 100%;
+        background: #FFFFFF;
+        a{
+            color: #5c5c5c;
+        }
+        .label_recommend_list_each{
+            width: 100%;
+            @include height(100rem);
+            border-bottom: 1px solid #e0e0e0;
+            .label_recommend_list_each_wrap{
+                @include height(100rem);
+                padding: 0 0.1rem;
+                display: -webkit-flex;
+                .label_recommend_list_each_content{
+                    flex: 20;
+                    line-height: 0.5rem;
+                }
+                .label_recommend_list_each_arrow{
+                    flex: 1;
+                    position: relative;
+                    img{
+                        display: block;
+                        @include width(13rem);
+                        @include height(24rem);
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(0,-50%);
+                    }
+                   
+                }
+            }
+        }
+        a:last-child .label_recommend_list_each{
+            border-bottom: none;
+        }
+    }
+}
+
+.teachers_lasted_container{
+    width: 100%;
+    height: 300px;
+    background: #33E564;
+    display: none;
+}
+.teachers_attention_container{
+    @include margin(20rem);
+    display: none;
+    .teachers_attention{
+       width: 100%;
+       background: $bg_color;
+       .teachers_attention_content{
+           @include padding(20rem,20rem,35rem,20rem);
+           .teachers_attention_content_hunterInfo{
+               display: -webkit-flex;
+               .teachers_attention_content_hunterHead{
+                    @include width(84rem);
+                    position: relative;
+                    img{
+                        @include border_radius(50%);
+                    }
+                    .v_icon{
+                        @include width(34rem);
+                        @include height(34rem);
+                        position: absolute;
+                        right: -(3rem / 200);
+                        bottom: -(3rem / 200);
+                    }
+               }
+               .teachers_attention_content_hunterName{
+                   flex: 1;
+                   margin-left: (20rem / 200);
+                   position: relative;
+                   .teachers_attention_content_hunterName_wrap{
+                       position: absolute;
+                       top: 50%;
+                       left: 0;
+                       transform: translate(0,-50%);
+                       span{
+                           display: inline-block;
+                           color: #4f4f4f;
+                       }
+                       p{
+                           color: #aaaaaa;
+                           @include margin_top(20rem);
+                       }
+                   }                   
+               }
+               .teachers_attention_content_hunterAtt{
+                   @include width(84rem);
+                   color: #c7c7c7;
+                   box-sizing: border-box;
+                   position: relative;
+                   a{   
+                       display: block;
+                       box-sizing: border-box;
+                       @include width(84rem);
+                       @include height(44rem);
+                       line-height: (44rem / 200);
+                       text-align: center;
+                       border: 1px solid #4b96ff;
+                       @include border_radius(25px);
+                       color: #4b96ff;
+                       position: absolute;
+                       top: 50%;
+                       right: 0;
+                       transform: translate(0,-50%);
+                   }
+                   .a_click{
+                       border: 1px solid #c2c2c2;
+                       color: #c7c7c7;
+                   }
+               }
+           }
+           .teachers_attention_info{
+               display: -webkit-flex;
+               .teachers_attention_info_blank{
+                   @include width(84rem);
+               }
+               .teachers_attention_info_content{
+                   flex: 1;
+                   margin-left: (20rem / 200);
+                   color: #737373;
+                   line-height: (39rem / 200);
+               }
+           }
+       }
+    }
+}

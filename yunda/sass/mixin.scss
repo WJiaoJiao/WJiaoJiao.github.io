@@ -1,0 +1,25 @@
+@mixin height($multiple){
+    height: $multiple / 200;
+}
+@mixin width($multiple){
+    width: $multiple / 200;
+}
+@mixin margin_top($multiple){
+    margin-top: $multiple / 200;
+}
+@mixin margin($multiple){
+    margin: $multiple / 200;
+}
+@mixin padding($multiple1,$multiple2,$multiple3,$multiple4){
+    padding: $multiple1 / 200 $multiple2 / 200 $multiple3 / 200 $multiple4 / 200;
+}
+@mixin border_radius($multiple){
+    border-radius: $multiple;
+    -webkit-border-radius: $multiple;
+    -moz-border-radius: $multiple;                     
+}
+@mixin box_shadow($x,$y,$size,$color){
+    -moz-box-shadow:$x $y $size $color; 
+    -webkit-box-shadow:$x $y $size $color; 
+    box-shadow:$x $y $size $color; 
+}

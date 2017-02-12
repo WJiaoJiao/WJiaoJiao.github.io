@@ -1,0 +1,32 @@
+.fontsize_00{
+    font-size: 30px;
+}
+.fontsize_01{
+    font-size: 28px;
+}
+.fontsize_02{
+    font-size: 26px;
+}
+.fontsize_03{
+    font-size: 24px;
+}
+.fontsize_04{
+    font-size: 22px;
+}
+.fontsize_05{
+    font-size: 18px;
+}
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.top20{
+    @include margin_top(20rem);
+}
+.top24{
+    @include margin_top(24rem);
+}
+.top30{
+    @include margin_top(30rem);
+}

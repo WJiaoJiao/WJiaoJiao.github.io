@@ -1,0 +1,208 @@
+.index_banner{
+    position: relative;
+    font-size: 0;
+    .hd{position: absolute;bottom: 4%;left: 50%;transform: translate(-50%,0);}
+    .hd li{display: inline-block;@include width(8rem);@include height(8rem);background: #597d91;margin-left: 5px;}
+    .hd li:first-child{margin-left: 0;}
+    .hd .on{background-color: #fff;}
+}
+.index_nav{
+    width: 100%;
+    @include height(78rem);
+    line-height: 0.39rem;
+    text-align: center;
+    background: $bg_color;
+    display: -webkit-flex;
+    .index_nav_wrap{
+        width: 62.5%;
+        margin: 0 auto;
+        display: -webkit-flex;
+        .index_nav_question{
+            flex: 1;
+            position: relative; 
+            &::after{
+                content: '';
+                width: 100%;
+                height: 4px;
+                background: #2a93ec;
+                @include border_radius(5px);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all .3s ease-in;
+            }
+        }
+        .index_nav_attention{
+            flex: 1;
+        }
+        .index_line_move{
+            &::after{
+                content: '';
+                left: 100%;
+            }
+        }
+    }
+}
+.index_question_container{
+    @include margin(20rem);
+    .index_question{
+        width: 100%;
+        background-color: $bg_color;
+        .index_question_content{
+            @include padding(35rem,24rem,24rem,24rem);       
+            .index_question_content_hunterInfo{
+                display: -webkit-flex;
+                .index_question_content_hunterHead{
+                    flex: 1;
+                    img{
+                        @include border_radius(50%);
+                    }
+                }
+                .index_question_content_hunterName{
+                    flex: 5;
+                    position: relative;
+                    span{
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 5%;
+                        transform: translate(0,-50%);
+                        color: $color_default_01;
+                    }
+                }
+                .index_question_content_hunterEarn{
+                    flex: 2;
+                    position: relative;
+                    span{
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(0,-50%);
+                        color: $color_default_01;
+                    }
+                }
+            }
+            .index_hunter_question{
+                line-height: 140%;
+                color: $color_default_02;
+            }
+            .index_question_btn{
+                width: 100%;
+                display: block;
+                @include height(70rem);
+                line-height: 0.35rem;
+                @include margin-top(30rem);
+                text-align: center;
+                color: $color_default_03;
+                background: url(../img/index_question_btn_bg.png);
+                position: relative;
+                .voice{
+                    position: absolute;
+                    left: 0.15rem;
+                    top: 50%;
+                    font-size: 0.16rem;
+                    transform: translate(0,-50%);
+                }                
+            }
+            .index_question_free{
+                background: $color_default_04;
+            }
+            .index_question_info{
+                color: $color_default_01;
+                i{
+                    color: $color_highlight;
+                    display: inline-block;
+                    max-width: 0.52rem;
+                    min-width: 0.15rem;
+                    @include height(25rem);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+.index_attention_container{
+    @include margin(20rem);
+    display: none;
+    .index_attention{
+       width: 100%;
+       background: $bg_color;
+       .index_attention_content{
+           @include padding(20rem,20rem,35rem,20rem);
+           .index_attention_content_hunterInfo{
+               display: -webkit-flex;
+               .index_attention_content_hunterHead{
+                    @include width(84rem);
+                    position: relative;
+                    img{
+                        @include border_radius(50%);
+                    }
+                    .v_icon{
+                        @include width(34rem);
+                        @include height(34rem);
+                        position: absolute;
+                        right: -(3rem / 200);
+                        bottom: -(3rem / 200);
+                    }
+               }
+               .index_attention_content_hunterName{
+                   flex: 1;
+                   margin-left: (20rem / 200);
+                   position: relative;
+                   .index_attention_content_hunterName_wrap{
+                       position: absolute;
+                       top: 50%;
+                       left: 0;
+                       transform: translate(0,-50%);
+                       span{
+                           display: inline-block;
+                           color: #4f4f4f;
+                       }
+                       p{
+                           color: #aaaaaa;
+                           @include margin_top(20rem);
+                       }
+                   }                   
+               }
+               .index_attention_content_hunterAtt{
+                   @include width(84rem);
+                   color: #c7c7c7;
+                   box-sizing: border-box;
+                   position: relative;
+                   a{   
+                       display: block;
+                       box-sizing: border-box;
+                       @include width(84rem);
+                       @include height(44rem);
+                       line-height: (44rem / 200);
+                       text-align: center;
+                       border: 1px solid #4b96ff;
+                       @include border_radius(25px);
+                       color: #4b96ff;
+                       position: absolute;
+                       top: 50%;
+                       right: 0;
+                       transform: translate(0,-50%);
+                   }
+                   .a_click{
+                       border: 1px solid #c2c2c2;
+                       color: #c7c7c7;
+                   }
+               }
+           }
+           .index_attention_info{
+               display: -webkit-flex;
+               .index_attention_info_blank{
+                   @include width(84rem);
+               }
+               .index_attention_info_content{
+                   flex: 1;
+                   margin-left: (20rem / 200);
+                   color: #737373;
+                   line-height: (39rem / 200);
+               }
+           }
+       }
+   }
+}

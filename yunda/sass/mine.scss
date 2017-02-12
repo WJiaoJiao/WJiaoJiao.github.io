@@ -1,0 +1,342 @@
+.mine_info{
+    width: 100%;
+    background: #FFFFFF;
+    .mine_info_wrap{
+        padding: 0.12rem 0.1rem 0.15rem 0.1rem;
+        text-align: center;
+        position: relative;
+        .mine_info_header{
+            @include width(120rem);
+            @include height(120rem);
+            box-sizing: border-box;
+            border-radius: 50%;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            margin-left: 50%;
+            transform: translate(-50%,0);
+            img{
+               position: absolute;
+               top: 0;
+               left: 0; 
+            }
+        }
+        .mine_info_name{
+            color: #333333;
+            margin-top: (12rem / 200);
+        }
+        .mine_info_profession{
+            color: #333333;
+            margin-top: (24rem / 200);
+        }
+        .mine_info_describe{
+            color: #999999;
+            margin-top: (12rem / 200);
+        }
+        .mine_edit{
+            @include height(30rem);
+            display: -webkit-flex;
+            justify-content: center;
+            margin-top: (12rem / 200);
+            a{
+                color: #2a93ec;
+            }
+            .mine_edit_pen{
+                display: inline-block;
+                @include width(28rem);
+                @include height(37rem);
+            }
+            .mine_edit_text{
+                display: inline-block;
+                vertical-align: bottom;
+                margin-left: (15rem / 200);
+            }
+        }
+        .mine_balance{
+            display: inline-block;
+            background: #f7ca42;
+            border-radius: 30px;
+            position: absolute;
+            top: (62rem / 200);
+            right: 0.1rem;
+            span{
+                display: inline-block;
+                padding: 0.05rem 0.1rem;
+                color: #FFFFFF;
+            }
+        }
+        .mine_code{
+            @include width(30rem);
+            @include height(30rem);
+            position: absolute;
+            bottom: (30rem / 200);
+            right: 0.2rem;
+        }
+    }
+}
+.mine_attention_fans{
+    width: 100%;
+    @include height(60rem);
+    line-height: 0.3rem;
+    background: #afd8fa;
+    display: -webkit-flex;
+    color: #FFFFFF;
+    position: relative;
+    box-shadow:0px 1px 0px 0px #e0e0e0 inset;
+    .mine_attention{
+        flex: 1;
+        text-align: center;
+    }
+    .mine_fans{
+        flex: 1;
+        text-align: center;
+    }
+    .mine_attention_fans_line{
+        @include height(22rem);
+        width: 1px;
+        background: #FFFFFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+.mine_nav{
+    width: 100%;
+    @include height(80rem);
+    line-height: (80rem / 200);
+    background: #FFFFFF;
+    box-shadow:0px 1px 0px 0px #e0e0e0 inset;
+    box-shadow:0px 1px #e0e0e0;
+    text-align: center;
+    .mine_nav_wrap{
+        padding: 0 0.1rem;
+        display: -webkit-flex;
+        div{
+            flex: 1;
+            position: relative;
+        }
+        .mine_nav_highlight{
+            color: $color_highlight;
+        }
+        .mine_nav_line_move::after{
+            content: '';
+            width: 100%;
+            height: 4px;
+            background: #2a93ec;
+            @include border_radius(5px);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    } 
+}
+.mine_nav_to_answer_container{
+    margin: 0.1rem 0.1rem 0.2rem 0.1rem;
+    a{
+        color: #4f4f4f;
+    }
+    .mine_nav_to_answer_mine{
+        @include height(120rem);
+        background: #FFFFFF;
+        .mine_nav_to_answer_mine_wrap{
+            padding: 0 0.19rem;
+            height: 100%;
+            display: -webkit-flex;            
+            .mine_nav_to_answer_mine_person{
+                @include width(28rem);
+                position: relative;
+                img{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0,-50%);                    
+                }
+            }
+            .mine_nav_to_answer_mine_text{
+                flex: 1;
+                line-height: (120rem / 200);
+                margin-left: (25rem / 200);
+            }
+            .mine_nav_to_answer_mine_arrow{
+                @include width(18rem);
+                position: relative;
+                img{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0,-50%);                    
+                }
+            }
+        }
+    }
+    .mine_nav_to_answer_each{
+        width: 100%;
+        background: #FFFFFF;
+        .mine_nav_to_answer_each_wrap{
+            padding: 0 0.19rem 0 0.125rem;            
+            .mine_nav_to_answer_each_info{  
+                @include height(66rem);              
+                display: -webkit-flex;
+                padding-top: (24rem / 200);
+                .mine_nav_to_answer_each_info_header{
+                    @include width(66rem);
+                    position: relative;
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                .mine_nav_to_answer_each_info_name{
+                    flex: 3;          
+                    position: relative;          
+                    .mine_nav_to_answer_each_info_name_wrap{
+                        position: absolute;
+                        top: 50%;
+                        left: (32rem / 200);
+                        transform: translate(0,-50%);
+                        .mine_nav_to_answer_userName{
+                            color: #737373;
+                        }
+                        .mine_nav_to_answer_userDes{
+                            color: #c2c2c2;
+                            margin-top: (6rem / 200);
+                        }
+                    }
+                    
+                }
+                .mine_nav_to_answer_each_info_refuse{
+                    flex: 1;
+                    line-height: (66rem / 200);
+                    color: #737373;
+                    text-align: right;
+                }
+                .mine_nav_to_answer_each_info_money{
+                    flex: 1;
+                    position: relative;
+                    a{
+                        display: inline-block;
+                        color: #FFFFFF;
+                        padding: 0.05rem 0.11rem;
+                        background: #f7ca42;
+                        border-radius: 30px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(0,-50%);
+                    }
+                }
+            }
+            .mine_nav_to_answer_each_question{
+                color: #505050;
+                margin-top: (35rem / 200);
+                line-height: 150%;
+            }
+            .mine_nav_to_answer_each_wait{
+                color: #999999;
+                padding-bottom: (20rem / 200);
+            }
+        }
+    }
+}
+.mine_invite_ask{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    @include height(62rem);
+    line-height: (62rem / 200);
+    background: $color_highlight;
+    color: #FFFFFF;
+    max-width: 640px;
+    text-align: center;
+}
+.mine_code_link{
+    background: rgba(0, 0, 0, 0.60);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    .mine_code_link_content{
+        @include width(560rem);
+        margin: 0 auto;
+        margin-top: (150rem / 200);
+        background: #f7f7f7;
+        border-radius: 2px;
+        text-align: center;
+        h2{
+            padding-top: (30rem / 200);
+            font-weight: normal;
+            color: $color_highlight;
+        }
+        .mine_code_link_single_link{
+            border-bottom: 1px solid #E0E0E0;
+            p{
+                width: 80%;
+                margin: 0 auto;
+                padding-top: (30rem / 200);
+                padding-bottom: (30rem / 200);
+                word-wrap: break-word;
+                color: #888484;
+            }
+        }
+        .mine_code_link_single_code{
+            padding-bottom: (150rem / 200);
+            img{
+                display: block;
+                @include width(180rem);
+                @include height(180rem);
+                margin-left: 50%;
+                transform: translate(-50%,0);
+                padding-top: (30rem / 200);
+            }
+            p{
+                line-height: 150%;
+                color: #888484;
+            }
+        }
+    }
+}
+
+.mine_nav_answer_container{
+    width: 100%;
+    display: none;
+    text-align: center;
+    position: relative;
+    p{
+        color: #999999;
+        margin-top: (85rem / 200);
+    }
+    a{
+        display: block;
+        color: #FFFFFF;
+        padding: (24rem / 200);
+        line-height: (24rem / 200);
+        background: #2a93ec;
+        border-radius: 4px;
+        position: absolute;
+        left: 50%;
+        top: (90rem / 200);
+        transform: translate(-50%,0);
+    }
+}
+
+.mine_nav_buy_container{
+    width: 100%;
+    display: none;
+    text-align: center;
+    position: relative;
+    p{
+        color: #999999;
+        margin-top: (85rem / 200);
+    }
+    a{
+        display: block;
+        color: #FFFFFF;
+        padding: (24rem / 200);
+        line-height: (24rem / 200);
+        background: #2a93ec;
+        border-radius: 4px;
+        position: absolute;
+        left: 50%;
+        top: (90rem / 200);
+        transform: translate(-50%,0);
+    }
+}
