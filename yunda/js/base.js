@@ -34,6 +34,15 @@ $(function(){
 		}
 	});
 	/*首页点击加关注 end*/
+	var media = new Audio("mp3/response.mp3");
+		
+	$('.index_question_btn').click(function(){
+		if(media.paused){
+			media.play();
+		}else{
+			media.pause();
+		}
+	});
 	
 	/*header返回按钮 begin*/
 	$('.arrow_back').tap(function(){
